@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosine Graph</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cosineCanvas"></canvas>
+    <script>
+        class CosineGraph {
+            constructor() {
+                this.canvas = document.getElementById("cosineCanvas");
+                this.ctx = this.canvas.getContext("2d");
+
+                window.addEventListener("resize", this.resize.bind(this), false);
+                this.resize();
+                this.draw();
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.draw();
+            }
+
+            draw() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.ctx.beginPath();
+                this.ctx.fillStyle = "#84D54C"; // 내부를 초록색으로 채우기 위한 색상 설정
+                this.ctx.moveTo(0, this.canvas.height); // 그래프의 시작 지점을 아래로 이동
+
+                const startX = 0;
+                const endX =  Math.PI; // 한 주기 (2π)
+
+                for (let x = startX; x <= endX; x += 0.01) {
+                    const y = Math.cos(x) * 650;
+                    const canvasX = (x / (2 * Math.PI)) * this.canvas.width; // 정규화하여 캔버스에 맞도록 조절
+                    const canvasY = this.canvas.height - y;
+
+                    this.ctx.lineTo(canvasX, canvasY);
+                }
+
+                this.ctx.lineTo(this.canvas.width, this.canvas.height); // 그래프의 끝 지점을 아래로 이동
+                this.ctx.closePath();
+
+                // 그래프 내부를 초록색으로 채우기
+                this.ctx.fill();
+
+                this.ctx.beginPath();
+                this.ctx.fillStyle = "green"; // 내부를 초록색으로 채우기 위한 색상 설정
+
+                this.ctx.moveTo(0, this.canvas.height); // 그래프의 시작 지점을 아래로 이동
+
+
+                for (let x = startX; x <= endX; x += 0.01) {
+                    const y = Math.cos(x) * 550;
+                    const canvasX = (x / (2 * Math.PI)) * this.canvas.width/1.5; // 정규화하여 캔버스에 맞도록 조절
+                    const canvasY = this.canvas.height - y;
+
+                    this.ctx.lineTo(canvasX, canvasY);
+                }
+
+                this.ctx.lineTo(this.canvas.width, this.canvas.height); // 그래프의 끝 지점을 아래로 이동
+                this.ctx.closePath();
+
+                // 그래프 내부를 초록색으로 채우기
+                this.ctx.fill();
+            }
+        }
+
+        const cosineGraph = new CosineGraph();
+    </script>
+</body>
+</html>
