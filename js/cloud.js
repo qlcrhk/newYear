@@ -1,29 +1,46 @@
 export class Cloud{
     constructor() {
-        this.color = "white";
+        this.speed = 1;
+        this.Xheight = 0;
+        this.height = 200; // 이 값은 적절한 값으로 변경되어야 합니다.
+        this.movingUp = true;
     }
 
     resize(stageWidth, stageHeight) {
         this.stageWidth = stageWidth;
         this.stageHeight = stageHeight;
+    }
 
-        this.cloudX = stageWidth / 2 - 200;
-        this.cloudY = stageHeight / 3 ;
+    update() {
+        if (this.movingUp) {
+            this.Xheight -= this.speed;
+
+            if (this.Xheight < this.height / 4 - 50) {
+                this.movingUp = false;
+            }
+        } else {
+            this.Xheight += this.speed;
+
+            if (this.Xheight > this.height / 4 + 50) {
+                this.movingUp = true;
+            }
+        }
     }
 
     draw(ctx) {
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.arc(this.cloudX -30, this.cloudY, 30, 0, degToRad(360), false);
-        ctx.arc(this.cloudX, this.cloudY, 50, 0, degToRad(360), false);
-        ctx.arc(this.cloudX + 40, this.cloudY, 65, 0, degToRad(360), false);
-        ctx.arc(this.cloudX + 80, this.cloudY, 50, 0, degToRad(360), false);
-        ctx.arc(this.cloudX + 110, this.cloudY, 30, 0, degToRad(360), false);
-        ctx.fill();
+        this.update();
+
+        const image = new Image();
+        image.src = '/image/cloud.png';
+
+        ctx.save();
+        ctx.translate(this.stageWidth,0)
+        ctx.scale(-1,1)
+        ctx.drawImage(image, this.stageWidth / 1.8   + this.Xheight, this.stageHeight / 4,  170, 120);
+        ctx.restore();
+        ctx.drawImage(image, this.stageWidth / 1.8  + this.Xheight, this.stageHeight / 4,  170, 120);
     }
 
-}
 
-function degToRad(deg) {
-    return (Math.PI / 180) * deg;
+
 }

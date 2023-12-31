@@ -14,6 +14,11 @@ import {
 
 import { MiniMountain } from './miniMountain.js';
 
+import { Bird } from './bird.js';
+
+import{
+    WaterFallAndmiddkeMountain
+} from './waterFallAndmiddkeMountain.js';
 class App {
     constructor() {
         this.canvas = document.createElement("canvas");
@@ -26,7 +31,8 @@ class App {
         this.waveGroup = new WaveGroup();
         this.hill = new Hill();
         this.miniMountain = new MiniMountain();
-        
+        this.bird = new Bird();
+        this.wAndM = new WaterFallAndmiddkeMountain();
 
         window.addEventListener("resize", this.resize.bind(this), false);
         this.resize();
@@ -44,10 +50,12 @@ class App {
 
         this.sun.resize( this.stageWidth, this.stageHeight);
         this.cloud.resize( this.stageWidth, this.stageHeight)
+        this.wAndM.resize(this.stageWidth,this.stageHeight)
         this.mountain.resize( this.stageWidth, this.stageHeight)
         this.waveGroup.resize(this.stageWidth, this.stageHeight);
         this.hill.resize(this.stageWidth, this.stageHeight);
         this.miniMountain.resize(this.stageWidth, this.stageHeight);
+        this.bird.resize(this.stageWidth, this.stageHeight);
 
     }
 
@@ -55,10 +63,12 @@ class App {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
         this.sun.draw(this.ctx);
         this.cloud.draw(this.ctx);
+        this.wAndM.draw(this.ctx);
+        this.mountain.draw(this.ctx);
         this.waveGroup.draw(this.ctx);
         this.miniMountain.draw(this.ctx);
-        this.mountain.draw(this.ctx);
         this.hill.draw(this.ctx);
+        this.bird.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));
     }
 }

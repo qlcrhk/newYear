@@ -24,21 +24,21 @@ export class MiniMountain {
         let startY = 0;
         let miniHeight = 0;
 
-        for (let j = 1; j >= 0; j--) {
+        for (let j = 2; j >= 0; j--) {
             for (let i = 0; i < this.totalMini; i++) {
 
 
                 startX = (200 * i) + (-100*j);
                 endX = startX + 200;
                 middle = startX + (endX - startX) /3;
-                startY = this.stageHeight/1.3;
+                startY = this.stageHeight/1.3 + 10;
                 miniHeight = -20*j
 
                 ctx.lineWidth = 20;
                 ctx.strokeStyle = "#113278";
                 ctx.fillStyle = "#418A47";
                 ctx.beginPath();
-                ctx.moveTo(startX, this.stageHeight + miniHeight);
+                ctx.moveTo(startX - 70, this.stageHeight + miniHeight);
                 ctx.quadraticCurveTo(middle, startY + miniHeight, endX, this.stageHeight + miniHeight);
                 ctx.closePath();
 
@@ -47,7 +47,7 @@ export class MiniMountain {
 
                 ctx.fillStyle = "#41780B";
                 ctx.beginPath();
-                ctx.moveTo(startX + 30, this.stageHeight + miniHeight);
+                ctx.moveTo(startX -30, this.stageHeight + miniHeight);
                 ctx.quadraticCurveTo(middle, startY + 50 + miniHeight, endX - 30, this.stageHeight + miniHeight);
                 ctx.closePath();
                 ctx.stroke();
@@ -55,7 +55,7 @@ export class MiniMountain {
 
                 ctx.fillStyle = "green";
                 ctx.beginPath();
-                ctx.moveTo(startX + 60, this.stageHeight + miniHeight);
+                ctx.moveTo(startX + 5, this.stageHeight + miniHeight);
                 ctx.quadraticCurveTo(middle, startY + 100 + miniHeight, endX - 60, this.stageHeight + miniHeight);
                 ctx.closePath();
                 ctx.stroke();

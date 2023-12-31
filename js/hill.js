@@ -15,9 +15,16 @@ export class Hill {
     draw(ctx) {
         ctx.lineWidth = 5;
         ctx.strokeStyle = "black";
+
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.stageWidth -100, this.stageHeight+100, this.stageWidth/22 + 260, 0, degToRad(180), true);
+        ctx.arc(100, this.stageHeight+150, this.stageWidth/22 + 260, 0, degToRad(180), true);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.stageWidth -100, this.stageHeight+150, this.stageWidth/22 + 260, 0, degToRad(180), true);
         ctx.fill();
         ctx.stroke();
     }
