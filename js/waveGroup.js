@@ -4,10 +4,10 @@ import {
 
 export class WaveGroup {
     constructor() {
-        this.totalWaves = 6;
+        this.totalWaves = 8;
         this.totalPoints = 6;
 
-        this.color = ['rgba(0, 199, 235, 1', 'rgba(0, 149, 199, 1)', 'rgba(0, 87, 158, 1)','rgba(0, 199, 235, 1)', 'rgba(0, 149, 199, 1)', 'rgba(0, 87, 158, 1)'];
+        this.color = ['rgba(0, 199, 235, 1)', 'rgba(0, 149, 199, 1)', 'rgba(0, 87, 158, 1)','rgba(0, 199, 235, 1)', 'rgba(0, 149, 199, 1)', 'rgba(0, 87, 158, 1)','rgba(0, 199, 235, 1)', 'rgba(0, 149, 199, 1)', 'rgba(0, 87, 158, 1)','rgba(0, 199, 235, 1', 'rgba(0, 149, 199, 1)', 'rgba(0, 87, 158, 1)'];
 
         this.waves = [];
 

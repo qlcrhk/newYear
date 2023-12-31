@@ -12,7 +12,7 @@ import {
     WaveGroup
 } from './waveGroup.js'
 
-import { MiniMountain } from './miniMountain.js';
+import { Sea } from './sea.js';
 
 import { Bird } from './bird.js';
 
@@ -30,7 +30,7 @@ class App {
         this.mountain = new Mountain();
         this.waveGroup = new WaveGroup();
         this.hill = new Hill();
-        this.miniMountain = new MiniMountain();
+        this.sea = new Sea();
         this.bird = new Bird();
         this.wAndM = new WaterFallAndmiddkeMountain();
 
@@ -54,7 +54,7 @@ class App {
         this.mountain.resize( this.stageWidth, this.stageHeight)
         this.waveGroup.resize(this.stageWidth, this.stageHeight);
         this.hill.resize(this.stageWidth, this.stageHeight);
-        this.miniMountain.resize(this.stageWidth, this.stageHeight);
+        this.sea.resize(this.stageWidth, this.stageHeight);
         this.bird.resize(this.stageWidth, this.stageHeight);
 
     }
@@ -66,7 +66,7 @@ class App {
         this.wAndM.draw(this.ctx);
         this.mountain.draw(this.ctx);
         this.waveGroup.draw(this.ctx);
-        this.miniMountain.draw(this.ctx);
+        this.sea.draw(this.ctx);
         this.hill.draw(this.ctx);
         this.bird.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));

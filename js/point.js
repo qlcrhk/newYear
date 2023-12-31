@@ -3,7 +3,7 @@ export class Point{
         this.x = x;
         this.y = y;
         this.fixedY = y;
-        this.speed = 0.02;
+        this.speed = 0.03;
         this.cur = index;
         this.max = Math.random() * 40 + 50;
     }

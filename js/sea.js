@@ -1,4 +1,4 @@
-export class MiniMountain {
+export class Sea {
     constructor() {
         this.totalMini = 10;
     }
@@ -35,8 +35,8 @@ export class MiniMountain {
                 miniHeight = -20*j
 
                 ctx.lineWidth = 20;
-                ctx.strokeStyle = "#113278";
-                ctx.fillStyle = "#418A47";
+                ctx.strokeStyle = 'black';
+                ctx.fillStyle = "rgba(0, 199, 235, 1)";
                 ctx.beginPath();
                 ctx.moveTo(startX - 70, this.stageHeight + miniHeight);
                 ctx.quadraticCurveTo(middle, startY + miniHeight, endX, this.stageHeight + miniHeight);
@@ -45,7 +45,7 @@ export class MiniMountain {
                 ctx.stroke();
                 ctx.fill();
 
-                ctx.fillStyle = "#41780B";
+                ctx.fillStyle = 'rgba(0, 149, 199, 1)';
                 ctx.beginPath();
                 ctx.moveTo(startX -30, this.stageHeight + miniHeight);
                 ctx.quadraticCurveTo(middle, startY + 50 + miniHeight, endX - 30, this.stageHeight + miniHeight);
@@ -53,7 +53,7 @@ export class MiniMountain {
                 ctx.stroke();
                 ctx.fill();
 
-                ctx.fillStyle = "green";
+                ctx.fillStyle = "rgba(0, 87, 158, 1)";
                 ctx.beginPath();
                 ctx.moveTo(startX + 5, this.stageHeight + miniHeight);
                 ctx.quadraticCurveTo(middle, startY + 100 + miniHeight, endX - 60, this.stageHeight + miniHeight);
