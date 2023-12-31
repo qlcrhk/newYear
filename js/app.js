@@ -19,6 +19,8 @@ import { Bird } from './bird.js';
 import{
     WaterFallAndmiddkeMountain
 } from './waterFallAndmiddkeMountain.js';
+
+import { Tree } from './tree.js';
 class App {
     constructor() {
         this.canvas = document.createElement("canvas");
@@ -33,6 +35,7 @@ class App {
         this.sea = new Sea();
         this.bird = new Bird();
         this.wAndM = new WaterFallAndmiddkeMountain();
+        this.tree = new Tree();
 
         window.addEventListener("resize", this.resize.bind(this), false);
         this.resize();
@@ -56,6 +59,7 @@ class App {
         this.hill.resize(this.stageWidth, this.stageHeight);
         this.sea.resize(this.stageWidth, this.stageHeight);
         this.bird.resize(this.stageWidth, this.stageHeight);
+        this.tree.resize(this.stageWidth, this.stageHeight);
 
     }
 
@@ -67,6 +71,7 @@ class App {
         this.mountain.draw(this.ctx);
         this.waveGroup.draw(this.ctx);
         this.sea.draw(this.ctx);
+        this.tree.draw(this.ctx);
         this.hill.draw(this.ctx);
         this.bird.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));
