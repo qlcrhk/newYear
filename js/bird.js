@@ -2,7 +2,8 @@ export class Bird {
     constructor() {
         this.speed = 1;
         this.Yheight = 0;
-        this.height = 200; // 이 값은 적절한 값으로 변경되어야 합니다.
+        this.imageSize = 200;
+        this.height = 200;
         this.movingUp = true;
     }
 
@@ -29,11 +30,11 @@ export class Bird {
 
     draw(ctx) {
         this.update();
-
+        let birdHieght = this.stageHeight / 4 + this.Yheight;
         const image = new Image();
         image.src = '/image/bird.png';
 
-        ctx.drawImage(image, this.stageWidth / 4, this.stageHeight / 4 + this.Yheight , this.height, this.height);
-        ctx.drawImage(image, this.stageWidth / 1.7, this.stageHeight / 4 + this.Yheight - 100, this.height, this.height);
+        ctx.drawImage(image, 400, birdHieght ,this.imageSize, this.imageSize);
+        ctx.drawImage(image, 1100, birdHieght- 100, this.imageSize, this.imageSize);
     }
 }

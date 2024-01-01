@@ -7,26 +7,23 @@ export class Hill {
     resize(stageWidth, stageHeight) {
         this.stageWidth = stageWidth;
         this.stageHeight = stageHeight;
-
-        this.centerX = stageWidth / 2;
-        this.centerY = stageHeight / 2;
     }
 
     draw(ctx) {
+        let hillX = 100;
+        let hillY = this.stageHeight+150;
+        let radius = 330;
         ctx.lineWidth = 5;
         ctx.strokeStyle = "black";
 
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.arc(100, this.stageHeight+150, this.stageWidth/22 + 260, 0, degToRad(180), true);
-        ctx.fill();
-        ctx.stroke();
 
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.stageWidth -100, this.stageHeight+150, this.stageWidth/22 + 260, 0, degToRad(180), true);
+        ctx.arc(hillX, hillY, radius, 0, degToRad(180), true);
+        ctx.arc(this.stageWidth - hillX, hillY, radius, 0, degToRad(180), true);
         ctx.fill();
         ctx.stroke();
+
     }
 
 }

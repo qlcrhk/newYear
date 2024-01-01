@@ -1,6 +1,8 @@
 export class Sea {
     constructor() {
-        this.totalMini = 10;
+        this.totalWave = 10;
+        this.totalLine = 3;
+        this.color = ['rgba(0, 199, 235, 1)','rgba(0, 149, 199, 1),rgba(0, 149, 199, 1)']
     }
 
     resize(stageWidth, stageHeight) {
@@ -24,13 +26,12 @@ export class Sea {
         let startY = 0;
         let miniHeight = 0;
 
-        for (let j = 2; j >= 0; j--) {
-            for (let i = 0; i < this.totalMini; i++) {
-
+        for (let j = this.totalLine -1; j >= 0; j--) {
+            for (let i = 0; i < this.totalWave; i++) {
 
                 startX = (200 * i) + (-100*j);
                 endX = startX + 200;
-                middle = startX + (endX - startX) /3;
+                middle = startX + (endX - startX) /2;
                 startY = this.stageHeight/1.3 + 10;
                 miniHeight = -20*j
 

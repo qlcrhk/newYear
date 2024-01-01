@@ -13,11 +13,13 @@ export class Sun {
     }
 
     draw(ctx) {
+        let radius = this.centerX/10 + 30;
+
         ctx.lineWidth = 5;
         ctx.strokeStyle = "black";
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.centerX, this.centerY/2, this.stageWidth/20 + 30, 0, degToRad(360), false);
+        ctx.arc(this.centerX, this.centerY/2, radius, 0, degToRad(360), false);
         ctx.fill();
         ctx.stroke();
     }

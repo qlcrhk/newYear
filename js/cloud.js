@@ -2,8 +2,8 @@ export class Cloud{
     constructor() {
         this.speed = 1;
         this.Xheight = 0;
-        this.height = 200; // 이 값은 적절한 값으로 변경되어야 합니다.
-        this.movingUp = true;
+        this.side = 50; // 이 값은 적절한 값으로 변경되어야 합니다.
+        this.moving = true;
     }
 
     resize(stageWidth, stageHeight) {
@@ -12,17 +12,17 @@ export class Cloud{
     }
 
     update() {
-        if (this.movingUp) {
+        if (this.moving) {
             this.Xheight -= this.speed;
 
-            if (this.Xheight < this.height / 4 - 50) {
-                this.movingUp = false;
+            if (this.Xheight < this.side - 25) {
+                this.moving = false;
             }
         } else {
             this.Xheight += this.speed;
 
-            if (this.Xheight > this.height / 4 + 50) {
-                this.movingUp = true;
+            if (this.Xheight > this.side + 25) {
+                this.moving = true;
             }
         }
     }
@@ -30,15 +30,19 @@ export class Cloud{
     draw(ctx) {
         this.update();
 
+        let imageX =this.stageWidth / 1.85   + this.Xheight;
+        let imageY = this.stageHeight / 4;
+        let imageW = 170;
+        let imageH = 120;
         const image = new Image();
         image.src = '/image/cloud.png';
 
         ctx.save();
         ctx.translate(this.stageWidth,0)
         ctx.scale(-1,1)
-        ctx.drawImage(image, this.stageWidth / 1.8   + this.Xheight, this.stageHeight / 4,  170, 120);
+        ctx.drawImage(image, imageX ,imageY ,  imageW, imageH);
         ctx.restore();
-        ctx.drawImage(image, this.stageWidth / 1.8  + this.Xheight, this.stageHeight / 4,  170, 120);
+        ctx.drawImage(image, imageX, imageY, imageW, imageH);
     }
 
 
