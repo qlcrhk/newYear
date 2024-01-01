@@ -21,8 +21,6 @@ import{
 } from './waterFallAndmiddkeMountain.js';
 
 import { Tree } from './tree.js';
-
-
 class App {
     constructor() {
         this.canvas = document.createElement("canvas");
@@ -68,17 +66,17 @@ class App {
     animate(t) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
         this.sun.draw(this.ctx);
-        this.cloud.draw(this.ctx);
+        // this.cloud.draw(this.ctx);
         this.wAndM.draw(this.ctx);
         this.mountain.draw(this.ctx);
-        this.waveGroup.draw(this.ctx);
+        // this.waveGroup.draw(this.ctx);
         this.sea.draw(this.ctx);
         this.tree.draw(this.ctx);   
         this.hill.draw(this.ctx);
-        this.bird.draw(this.ctx);
+        // this.bird.draw(this.ctx);
         requestAnimationFrame(this.animate.bind(this));
     }
 }
 window.onload = () => {
-    new App();
+    new App ();
 }

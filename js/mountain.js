@@ -15,6 +15,7 @@ export class Mountain {
 
     
         //  왼쪽 산
+        ctx.strokeStyle = "#113278";
         ctx.fillStyle = "#37FC08";
         ctx.beginPath();
         ctx.moveTo(-100, this.stageHeight);
@@ -24,7 +25,6 @@ export class Mountain {
         ctx.fill();
 
         ctx.lineWidth = 20;
-        ctx.strokeStyle = "#113278";
         ctx.fillStyle = "#418A47";
         ctx.beginPath();
         ctx.moveTo(-100, this.stageHeight);

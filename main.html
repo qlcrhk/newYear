@@ -9,7 +9,26 @@
 </head>
 
 <body>
-    <script type="module" src="/js/app.js"></script>
+    <div class="container">
+        <p id="music">music Play</p> 
+    </div>
+    <script type="module" src="/js/app.js" id="canvas"></script>
+
+    <script>
+        var isPlaying = false;
+        var audio = new Audio('/sound/아름다운_나라_무니_가사_없는버전_.mp3');
+        document.getElementById("music").addEventListener("click", function(){
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.loop = true;
+                audio.play();
+
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+
 </body>
 
 </html>
