@@ -10,24 +10,30 @@
 
 <body>
     <div class="container">
-        <p id="music">music Play</p> 
+        <p id="music">music Play</p>
+        <span>image by FreePik / music by 아름다운나라-신문희</span>
+
     </div>
-    <script type="module" src="/js/app.js" id="canvas"></script>
 
     <script>
         var isPlaying = false;
         var audio = new Audio('/sound/아름다운_나라_무니_가사_없는버전_.mp3');
-        document.getElementById("music").addEventListener("click", function(){
+        document.getElementById("music").addEventListener("click", function () {
             if (isPlaying) {
                 audio.pause();
+                document.getElementById("music").innerHTML = `music Play`
+
             } else {
                 audio.loop = true;
                 audio.play();
+                document.getElementById("music").innerHTML = `새해 복 많이 받으세요.`
 
             }
             isPlaying = !isPlaying;
         });
     </script>
+    <script type="module" src="/js/app.js" id="canvas"></script>
+
 
 </body>
 

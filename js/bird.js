@@ -33,7 +33,7 @@ export class Bird {
         const image = new Image();
         image.src = '/image/bird.png';
 
-        ctx.drawImage(image, this.stageWidth / 4, this.stageHeight / 4 + this.Yheight + 100, this.height, this.height);
+        ctx.drawImage(image, this.stageWidth / 4, this.stageHeight / 4 + this.Yheight , this.height, this.height);
         ctx.drawImage(image, this.stageWidth / 1.7, this.stageHeight / 4 + this.Yheight - 100, this.height, this.height);
     }
 }
