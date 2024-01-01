@@ -1,6 +1,7 @@
 export class WaterFallAndmiddkeMountain{
     constructor(){
-
+        this.color = ['#37FC08','#418A47','#41780B','green']
+        this.waveColor = ['white','rgba(0, 149, 199, 1)','white','rgba(0, 149, 199, 1)','white'];
     }
 
 
@@ -15,155 +16,68 @@ export class WaterFallAndmiddkeMountain{
     draw(ctx) {
 
         // 중앙 산
+
+        let startX = 150;
+        let mountainY = this.centerY/10 - 150;
+        let mountainX = 1550;
+        let waveY = this.centerY -150;
+        let waveX = 680;
+
+        ctx.strokeStyle = "#113278";
         ctx.fillStyle = "#37FC08";
-        ctx.beginPath();
-        ctx.moveTo(200, this.stageHeight);
-        ctx.quadraticCurveTo(800, this.centerY/10 - 100, 1400 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
         ctx.lineWidth = 20;
-        ctx.strokeStyle = "#113278";
-        ctx.fillStyle = "#418A47";
-        ctx.beginPath();
-        ctx.moveTo(250, this.stageHeight);
-        ctx.quadraticCurveTo(800,this.centerY/10 - 50, 1350, this.stageHeight);
-        ctx.closePath();
 
-        ctx.stroke();
-        ctx.fill();
+        for (let i = 0; i <4; i++){
 
+            mountainY += 50;
 
-
-        ctx.strokeStyle = "#113278";
-        ctx.fillStyle = "#41780B";
-        ctx.beginPath();
-        ctx.moveTo(300, this.stageHeight);
-        ctx.quadraticCurveTo(800, this.centerY/10 , 1300, this.stageHeight);
-        ctx.closePath();
-
-        ctx.stroke();
-        ctx.fill();
-
-
-
-        ctx.strokeStyle = "#113278";
-        ctx.fillStyle = "green";
-        ctx.beginPath();
-        ctx.moveTo(350, this.stageHeight);
-        ctx.quadraticCurveTo(800, this.centerY/10 + 50, 1250 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
+            ctx.fillStyle = this.color[i];
+            ctx.beginPath();
+            ctx.moveTo(startX, this.stageHeight);
+            ctx.quadraticCurveTo(800, mountainY, mountainX , this.stageHeight);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.fill();
+        }
 
         // waterFall
         ctx.lineWidth = 10;
-        ctx.fillStyle = "white";
         ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(350, this.stageHeight);
-        ctx.quadraticCurveTo(370, this.centerY -150, 700 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
 
+        for (let i = 0; i < 5; i++){
+            
+            waveX -= 25;
 
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "rgba(0, 149, 199, 1)";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(350, this.stageHeight);
-        ctx.quadraticCurveTo(370, this.centerY -150, 680 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
+            ctx.fillStyle = this.waveColor[i];
+            ctx.beginPath();
+            ctx.moveTo(300, this.stageHeight);
+            ctx.quadraticCurveTo(370, waveY, waveX , this.stageHeight);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.fill();
+    
+        }
 
-
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(350, this.stageHeight);
-        ctx.quadraticCurveTo(370, this.centerY -150, 660 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "rgba(0, 149, 199, 1)";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(350, this.stageHeight);
-        ctx.quadraticCurveTo(370, this.centerY -150, 630 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(350, this.stageHeight);
-        ctx.quadraticCurveTo(370, this.centerY -150, 610 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
 
         // waterFall
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(1250, this.stageHeight);
-        ctx.quadraticCurveTo(1300, this.centerY -150, 910 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
+
+        waveX = 950;
+
+        for (let i = 0; i < 5; i++){
+            
+            waveX += 25;
+
+            ctx.fillStyle = this.waveColor[i];
+            ctx.beginPath();
+            ctx.moveTo(1250, this.stageHeight);
+            ctx.quadraticCurveTo(1350, waveY, waveX , this.stageHeight);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.fill();
+    
+        }
 
 
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "rgba(0, 149, 199, 1)";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(1250, this.stageHeight);
-        ctx.quadraticCurveTo(1300, this.centerY -150, 930 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(1250, this.stageHeight);
-        ctx.quadraticCurveTo(1300, this.centerY -150, 950 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "rgba(0, 149, 199, 1)";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(1250, this.stageHeight);
-        ctx.quadraticCurveTo(1300, this.centerY -150, 980 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "white";
-        ctx.strokeStyle = "black";
-        ctx.beginPath();
-        ctx.moveTo(1250, this.stageHeight);
-        ctx.quadraticCurveTo(1300, this.centerY -150, 1000 , this.stageHeight);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
     }
 
 

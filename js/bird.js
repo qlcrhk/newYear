@@ -2,7 +2,7 @@ export class Bird {
     constructor() {
         this.speed = 1;
         this.Yheight = 0;
-        this.imageSize = 200;
+        // this.imageSize = 200;
         this.height = 200;
         this.movingUp = true;
     }
@@ -31,10 +31,12 @@ export class Bird {
     draw(ctx) {
         this.update();
         let birdHieght = this.stageHeight / 4 + this.Yheight;
+        let imageSize = this.stageWidth/18 + 100;
+
         const image = new Image();
         image.src = '/image/bird.png';
 
-        ctx.drawImage(image, 400, birdHieght ,this.imageSize, this.imageSize);
-        ctx.drawImage(image, 1100, birdHieght- 100, this.imageSize, this.imageSize);
+        ctx.drawImage(image, 200, birdHieght ,imageSize, imageSize);
+        ctx.drawImage(image, 1300, birdHieght - 100, imageSize, imageSize);
     }
 }

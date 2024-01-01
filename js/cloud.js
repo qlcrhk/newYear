@@ -32,7 +32,7 @@ export class Cloud{
 
         let imageX =this.stageWidth / 1.85   + this.Xheight;
         let imageY = this.stageHeight / 4;
-        let imageW = 170;
+        let imageW = this.stageWidth / 15 + 100;
         let imageH = 120;
         const image = new Image();
         image.src = '/image/cloud.png';

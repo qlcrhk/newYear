@@ -15,7 +15,7 @@ export class Mountain {
     draw(ctx) {
         ctx.strokeStyle = "#113278";
         ctx.lineWidth = 20;
-        let mountainY = this.centerY / 5 - 400;
+        let mountainY = this.centerY / 5 - 500;
         let leftX = 600;
         let rightX = 1050;
 

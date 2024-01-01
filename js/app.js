@@ -68,14 +68,15 @@ class App {
     animate(t) {
         this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
         this.sun.draw(this.ctx);
-        this.cloud.draw(this.ctx);
         this.wAndM.draw(this.ctx);
         this.mountain.draw(this.ctx);
         this.waveGroup.draw(this.ctx);
         this.sea.draw(this.ctx);
         this.tree.draw(this.ctx);   
         this.hill.draw(this.ctx);
+        this.cloud.draw(this.ctx);
         this.bird.draw(this.ctx);
+
         requestAnimationFrame(this.animate.bind(this));
     }
 }

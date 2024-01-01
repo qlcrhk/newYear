@@ -12,9 +12,11 @@ export class Tree{
         const image = new Image();
         image.src = '/image/tree.png'
 
-        ctx.drawImage(image, -20, 300, 400,400);
-        ctx.drawImage(image, 1200, 300, 400,400);
-        ctx.drawImage(image, 1340, 300, 400,400);
+        let treeSize= 400;
+
+        ctx.drawImage(image, -20, 300, treeSize,treeSize);
+        ctx.drawImage(image, 1200, 300, treeSize,treeSize);
+        ctx.drawImage(image, 1340, 300, treeSize,treeSize);
     }
 
 }
